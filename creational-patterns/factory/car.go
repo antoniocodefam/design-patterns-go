@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Car struct {
 	brand string
 	origin string
@@ -19,4 +21,9 @@ func (c *Car) setOrigin(origin string) {
 
 func (c *Car) getOrigin() string {
 	return c.origin
+}
+
+func (c *Car) printDetails() {
+	fmt.Printf("Brand: %s - Origin: %s",c.getBrand(),c.getOrigin())
+	fmt.Println()
 }
