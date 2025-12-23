@@ -7,3 +7,10 @@ type IComponent interface {
 	setName(name string)
 }
 
+type IComposite interface {
+	IComponent
+	add(child IComponent)
+	remove(name string)
+	clear()
+}
+

@@ -6,28 +6,28 @@ import (
 )
 
 func main() {
-	front := &Assembly{name: "Front Assembly"}
-	front.add(&Component{name: "Front Wheel", price: 180.20})
-	front.add(&Component{name: "Front Brake", price: 95.50})
-	front.add(&Component{name: "Handlebar", price: 120.00})
+	front := newAssembly("Front Assembly")
+	front.add(newComponent("Front Wheel", 180.20))
+	front.add(newComponent("Front Brake", 95.50))
+	front.add(newComponent("Handlebar", 120.00))
 
-	rear := &Assembly{name: "Rear Assembly"}
-	rear.add(&Component{name: "Rear Wheel", price: 170.99})
-	rear.add(&Component{name: "Rear Brake", price: 88.40})
-	rear.add(&Component{name: "Chain & Sprocket", price: 75.00})
+	rear := newAssembly("Rear Assembly")
+	rear.add(newComponent("Rear Wheel", 170.99))
+	rear.add(newComponent("Rear Brake", 88.40))
+	rear.add(newComponent("Chain & Sprocket", 75.00))
 
-	powertrain := &Assembly{name: "Powertrain"}
-	powertrain.add(&Component{name: "Engine 650cc", price: 3200.00})
-	powertrain.add(&Component{name: "Exhaust", price: 420.00})
-	powertrain.add(&Component{name: "Fuel System", price: 180.00})
+	powertrain := newAssembly("Powertrain")
+	powertrain.add(newComponent("Engine 650cc", 3200.00))
+	powertrain.add(newComponent("Exhaust", 420.00))
+	powertrain.add(newComponent("Fuel System", 180.00))
 
-	chassis := &Assembly{name: "Motorcycle Chassis"}
+	chassis := newAssembly("Motorcycle Chassis")
 	chassis.add(front)
 	chassis.add(rear)
 	chassis.add(powertrain)
-	chassis.add(&Component{name: "Frame", price: 800.00})
-	chassis.add(&Component{name: "Seat", price: 90.00})
-	chassis.add(&Component{name: "Lights", price: 140.00})
+	chassis.add(newComponent("Frame", 800.00))
+	chassis.add(newComponent("Seat", 90.00))
+	chassis.add(newComponent("Lights", 140.00))
 
 	fmt.Printf("\n%-40s %10.2f\n", "Total price", chassis.getPrice())
 
