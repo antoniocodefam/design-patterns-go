@@ -12,7 +12,7 @@ func (m *heatedGripsMotorcycleDecorator) getPrice() float32 {
 	return m.wrapped.getPrice() + 39.99
 }
 
-func newHeatedGripsMotorcycleDecorator(wrapped IMotorcycle) *heatedGripsMotorcycleDecorator{
+func newHeatedGripsMotorcycleDecorator(wrapped IMotorcycle) IMotorcycle {
 	return &heatedGripsMotorcycleDecorator{
 		motorcycleDecorator: motorcycleDecorator{
 			wrapped: wrapped,

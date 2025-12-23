@@ -3,10 +3,7 @@ package main
 import "fmt"
 
 func main(){
-	basicMotorcycle := &BaseMotorcycle{
-		description: "Standard kit bike",
-		price: 6200.00,
-	}
+	basicMotorcycle := newBaseMotorcycle(6200.00, "Standard kit bike")
     printDetails(basicMotorcycle)
 
 	sportsBike := newAbsMotorcycleDecorator(basicMotorcycle)
